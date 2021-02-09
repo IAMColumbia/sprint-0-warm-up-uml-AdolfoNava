@@ -20,7 +20,7 @@ namespace Sprint_0_Warm_Up
 
         public virtual string About()
         {
-            return "This model airplane has a max altitude of " + MaxAltitude + " feet while it's current altitude is at " + CurrentAltitude;
+            return $"This model airplane has a max altitude of {MaxAltitude} feet while it's current altitude is at {CurrentAltitude}";
         }
 
         public virtual string TakeOff()
