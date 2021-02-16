@@ -4,15 +4,15 @@ using System.Text;
 
 namespace Sprint_0_Warm_Up
 {
-    class ToyPlane : Airplane
+    public class ToyPlane : Airplane
     {
-        protected bool isWoundUp;
+        public bool isWoundUp { get; set; }
 
         public ToyPlane()
         {
             this.isWoundUp = false;
             this.CurrentAltitude = 0;
-            this.MaxAltitude = 8000;
+            this.MaxAltitude = 50;
             engine.isStarted = false;
         }
 
@@ -21,7 +21,7 @@ namespace Sprint_0_Warm_Up
             return "This toy plane model currently has a current altitude of " + CurrentAltitude + " feet with a max altitude of " + MaxAltitude + " feet.";
         }
 
-        protected string getWindUpString()
+        public string getWindUpString()
         {
             return "Obtained string to Wind up the plane to unleash flight.";
         }
@@ -36,7 +36,8 @@ namespace Sprint_0_Warm_Up
         {
             if (engine.isStarted)
             {
-                CurrentAltitude = CurrentAltitude + 1000;
+                IsFlying = true;
+                CurrentAltitude = MaxAltitude;
 
                 return "The toy plane is currently taking off the ground.";
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sprint_0_Warm_Up
 {
-    class Drone : AerialVehicle
+    public class Drone : AerialVehicle
     {
         public Drone()
         {

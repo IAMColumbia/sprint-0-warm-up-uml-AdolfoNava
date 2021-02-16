@@ -46,7 +46,13 @@ namespace Sprint_0_Warm_Up
             Console.WriteLine(getEngineStartedString());
 
         }
-
+        public void FlyDown()
+        {
+            if (IsFlying)
+                CurrentAltitude = CurrentAltitude - 1000;
+            if (CurrentAltitude < 0)
+                CurrentAltitude = 0;
+        }
         public void FlyDown(int howMuch)
         {
             CurrentAltitude = CurrentAltitude - howMuch;
@@ -57,19 +63,19 @@ namespace Sprint_0_Warm_Up
             }
         }
 
-        internal void FlyUp()
+        public void FlyUp()
         {
             if (IsFlying)
                 CurrentAltitude = CurrentAltitude + 1000;
         }
 
-        internal void FlyUp(int HowMuch)
+        public void FlyUp(int HowMuch)
         {
             CurrentAltitude = CurrentAltitude + HowMuch;
             if (CurrentAltitude > MaxAltitude)
             {
-                Console.WriteLine("The Altitude given in to the system is vaild reverting back to previous inputted altiutde now.");
-                CurrentAltitude = CurrentAltitude - HowMuch;
+                Console.WriteLine("The Altitude given in to the system too high reverting to highest altiutde now.");
+                CurrentAltitude = MaxAltitude;
             }
         }
     }
