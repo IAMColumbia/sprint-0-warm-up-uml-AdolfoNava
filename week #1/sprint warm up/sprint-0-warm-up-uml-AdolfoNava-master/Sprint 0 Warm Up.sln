@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprint 0 Warm Up", "Sprint 0 Warm Up\Sprint 0 Warm Up.csproj", "{636F8EE7-6FFA-4FEC-94E5-D521319C33A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sprint 0 Unit Testing", "Sprint 0 Unit Testing\Sprint 0 Unit Testing.csproj", "{232D2CFB-E288-42A2-AC98-E1AFF46B6B5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sprint 0 Unit Testing", "Sprint 0 Unit Testing\Sprint 0 Unit Testing.csproj", "{232D2CFB-E288-42A2-AC98-E1AFF46B6B5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AerialVehicleUnitTestInjections", "AerialVehicleUnitTestInjections\AerialVehicleUnitTestInjections.csproj", "{70550FD1-36B9-4BEB-AFFE-FE4CCA1DEC59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{232D2CFB-E288-42A2-AC98-E1AFF46B6B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{232D2CFB-E288-42A2-AC98-E1AFF46B6B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{232D2CFB-E288-42A2-AC98-E1AFF46B6B5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70550FD1-36B9-4BEB-AFFE-FE4CCA1DEC59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70550FD1-36B9-4BEB-AFFE-FE4CCA1DEC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70550FD1-36B9-4BEB-AFFE-FE4CCA1DEC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70550FD1-36B9-4BEB-AFFE-FE4CCA1DEC59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

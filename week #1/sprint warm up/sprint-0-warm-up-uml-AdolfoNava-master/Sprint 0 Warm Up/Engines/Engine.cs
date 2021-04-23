@@ -1,23 +1,26 @@
 ﻿namespace Sprint_0_Warm_Up
 {
-    public class Engine
+    public class Engine : IEngine
     {
-        public bool isStarted;
+        public bool IsStarted { get; set; }
         public Engine()
         {
-            this.isStarted = false;
+            
         }
-        public string About()
+
+       
+
+        public virtual string About()
         {
             return "This is a fully functional engine for aerial vehicles only.";
         }
         public void Start()
         {
-            isStarted = true;
+            IsStarted = true;
         }
         public void Stop()
         {
-            isStarted = false;
+            IsStarted = false;
         }
     }
 }

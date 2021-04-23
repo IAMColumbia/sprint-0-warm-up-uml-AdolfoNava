@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Sprint_0_Warm_Up;
+using Sprint_0_Warm_Up.Engines;
 
 namespace Sprint_0_Unit_Testing
 {
@@ -12,7 +13,7 @@ namespace Sprint_0_Unit_Testing
         Airplane airplane;
         public AirplaneTest()
             {
-            airplane = new Airplane();
+            airplane = new Airplane( new JetEngine());
             }
         [TestMethod]
         public void AirplaneAbout()
@@ -31,8 +32,8 @@ namespace Sprint_0_Unit_Testing
             Airplane ap = airplane;
             string apEngineAboutText;
 
-            apEngineAboutText = "This is a fully functional engine for aerial vehicles only.";
-            Assert.AreEqual(apEngineAboutText,ap.engine.About());
+            apEngineAboutText = "This is an Engine of a Commerical level passenger Jet that is meant to travel across large distances.";
+            Assert.AreEqual(apEngineAboutText,ap.Engine.About());
         }
         [TestMethod]
         public void AirplaneTakeOff()
@@ -43,20 +44,20 @@ namespace Sprint_0_Unit_Testing
             bool isFlyingBeginning;
             bool isFlyingEnd;
 
-            engineStarted = ap.engine.isStarted;
+            engineStarted = ap.Engine.IsStarted;
             engineEnd = true;
             isFlyingBeginning = ap.IsFlying;
             isFlyingEnd = true;
 
             Assert.AreEqual(false, engineStarted);// test engine class
-            ap.engine.Start();
-            Assert.AreEqual(true, ap.engine.isStarted);
-            ap.engine.Stop();
-            Assert.AreEqual(false, ap.engine.isStarted);//reset
+            ap.Engine.Start();
+            Assert.AreEqual(true, ap.Engine.IsStarted);
+            ap.Engine.Stop();
+            Assert.AreEqual(false, ap.Engine.IsStarted);//reset
             ap.TakeOff();
             Assert.IsFalse(ap.IsFlying);
             ap.StartEngine();
-            Assert.AreEqual(engineEnd, ap.engine.isStarted);
+            Assert.AreEqual(engineEnd, ap.Engine.IsStarted);
             ap.TakeOff();
             Assert.AreEqual(isFlyingEnd, ap.IsFlying);
 

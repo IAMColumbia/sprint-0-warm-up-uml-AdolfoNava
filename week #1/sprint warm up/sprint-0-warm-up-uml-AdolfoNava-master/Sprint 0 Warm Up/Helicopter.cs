@@ -6,9 +6,10 @@ namespace Sprint_0_Warm_Up
 {
     public class Helicopter : AerialVehicle
     {
-        public Helicopter()
+        public Helicopter(IEngine engine)
         {
             MaxAltitude = 8000;
+            this.Engine = engine;
         } 
     }
 }

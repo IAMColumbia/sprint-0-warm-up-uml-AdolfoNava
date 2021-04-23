@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="SimpleWPF.View.UserControlCharacter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SimpleWPF.View" xmlns:viewmodels="clr-namespace:SimpleWPF.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:CharacterViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="CharacterViewModel">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblCharacterName">Name:</Label>
+                <TextBlock x:Name="tbCharacterName" Text="{Binding CharName}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                <Label x:Name="lblCharacterClass">Class:</Label>
+                <TextBlock x:Name="tbCharacterClass" Text="{Binding CharClass}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblCharacterRace">Race:</Label>
+                <TextBlock x:Name="tbCharacterRace" Text="{Binding CharRace}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblCharacterStrength">Strength:</Label>
+                <TextBlock x:Name="tbCharacterStrength" Text="{Binding CharStrength}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblCharacterMagic">Race:</Label>
+                <TextBlock x:Name="tbCharacterMagic" Text="{Binding CharMagic}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblCharacterEndurance">Endurance:</Label>
+                <TextBlock x:Name="tbCharacterEndurance" Text="{Binding CharEndurance}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblCharacterAbout">About:</Label>
+                <TextBlock x:Name="tbCharacterAbout" Text="{Binding CharAbout, Mode=OneWay}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnSubStrength" Command="{Binding CharSubStrengthCommand}" Height="18">- Strength</Button>
+                <Separator Margin="50,0,0,0"></Separator>
+                <Button x:Name="btnAddStrength" Command="{Binding CharAddStrengthCommand}" Height="18">+ Strength</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnSubMagic" Command="{Binding CharSubMagicCommand}" Height="18">- Magic</Button>
+                <Separator Margin="63,0,0,0"></Separator>
+                <Button x:Name="btnAddMagic" Command="{Binding CharAddMagicCommand}" Height="18" Content="+ Magic"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnSubEndurance" Command="{Binding CharSubEnduranceCommand}" Height="18">- Endurance</Button>
+                <Separator Margin="40,0,0,0"></Separator>
+                <Button x:Name="btnAddEndurance" Command="{Binding CharAddEnduranceCommand}" Height="18">+ Endurance</Button>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="btnAbout" Command="{Binding CharAboutUpdateCommand}">Update About</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

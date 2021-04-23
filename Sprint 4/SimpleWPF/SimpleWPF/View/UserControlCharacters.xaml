@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="SimpleWPF.View.UserControlCharacters"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SimpleWPF.View" xmlns:viewmodels="clr-namespace:SimpleWPF.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:CharactersViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="CharactersViewModel">
+    <Grid>
+        <StackPanel>
+        <ListView x:Name="lvCharacters" ItemsSource="{Binding VmChar}"/>
+        <ItemsControl ItemsSource="{Binding VmChar}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                            <TextBlock x:Name="CharsNames" Text="{Binding CharName}"></TextBlock>
+                            <TextBlock x:Name="CharsClass" Text="{Binding CharClass}"></TextBlock>
+                            <TextBlock x:Name="CharactersRace" Text="{Binding CharRace}"></TextBlock>
+                            <TextBlock x:Name="CharactersStrength" Text="{Binding CharStrength}"></TextBlock>
+                            <TextBlock x:Name="CharactersMagic" Text="{Binding CharMagic}"></TextBlock>
+                            <TextBlock x:Name="CharactersEndurance" Text="{Binding CharEndurance}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        </StackPanel>
+    </Grid>
+</UserControl>

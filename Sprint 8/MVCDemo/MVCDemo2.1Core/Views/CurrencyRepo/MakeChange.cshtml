@@ -1,0 +1,45 @@
+﻿@model MVCDemo2._1Core.Models.RepoViewModel
+
+@{
+    ViewData["Title"] = "MakeChange";
+}
+
+<h2>MakeChange</h2>
+
+<h4>RepoViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="MakeChange">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TotalValue" class="control-label"></label>
+                <input asp-for="TotalValue" class="form-control" />
+                <span asp-validation-for="TotalValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    @foreach (var item in Model.repo.Coins)
+    {
+        <ul>
+            <li>
+                @Html.DisplayFor(Model => item.Name)
+            </li>
+            <li>
+                @Html.DisplayFor(Model => item.MonetaryValue)
+            </li>
+        </ul>
+    }
+</div>
+
+<div>
+    <a asp-action="Index" >Back to List</a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

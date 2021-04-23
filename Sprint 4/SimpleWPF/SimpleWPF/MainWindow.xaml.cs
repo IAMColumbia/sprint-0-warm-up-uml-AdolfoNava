@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SimpleWPF.Model;
 
 namespace SimpleWPF
 {
@@ -21,10 +22,29 @@ namespace SimpleWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        CharacterRepo repo;
+        CharactersViewModel charvm;
         public MainWindow()
         {
+            repo = new CharacterRepo();
+            charvm = new CharactersViewModel(repo);
             InitializeComponent();
+
         }
 
+        private void UserControlCharacter_Loaded(object sender, RoutedEventArgs e)
+        {
+            UserControlCharacter.DataContext = charvm.VmChar[0];
+        }
+
+        private void UserControlCharacter2_Loaded(object sender, RoutedEventArgs e)
+        {
+            UserControlCharacter2.DataContext = charvm.VmChar[1];
+        }
+
+        private void UserControlCharactersList_Loaded(object sender, RoutedEventArgs e)
+        {
+            UserControlCharactersList.DataContext = charvm;
+        }
     }
 }

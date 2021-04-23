@@ -4,41 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleWPF"
-        xmlns:vm="clr-namespace:SimpleWPF.ViewModels"
+        
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <vm:CharacterViewModel 
-            x:Key="CharacterViewModel"/>
-    </Window.Resources>
-    <Grid DataContext="{Binding NotifyOnTargetUpdated=True, Source={StaticResource CharacterViewModel}}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" MinWidth="175"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Character Name" HorizontalAlignment="Center" Margin="34,0,51,0" Width="90"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Width="617" HorizontalAlignment="Center" Text="{Binding Character.Name, Mode=TwoWay}"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Class" HorizontalAlignment="Center" Margin="66,0,77,0" Width="32"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Width="617" HorizontalAlignment="Center" Text="{Binding Character.Class, Mode=TwoWay}"/>
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Race" HorizontalAlignment="Center" Margin="66,0,59,0" Width="50"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Width="617" HorizontalAlignment="Center" Text="{Binding Character.Race, Mode=TwoWay}"/>
-        <Button Content="Submit" Command="{Binding SubmitCommand }" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1" Margin="220,120,212,0" Width="185" Height="46" VerticalAlignment="Top" Click="Button_Click"/>
-        <ListView ItemsSource="{Binding Characters}" Width="Auto" Grid.Row="3" Grid.Column="1" Margin="0,0,0,294" Grid.RowSpan="2">
-            <ListView.View >
-                <GridView>
-                    <GridViewColumn Header="Character Name" DisplayMemberBinding="{Binding Name}" Width="Auto"/>
-                    <GridViewColumn  Header="Class" DisplayMemberBinding="{Binding Class}" Width="Auto"/>
-                    <GridViewColumn  Header="Race" DisplayMemberBinding="{Binding Race}" Width="Auto"/>
-
-                </GridView>
-            </ListView.View>
-        </ListView>
+        Title="Simple wpf home" Height="1520" Width="1080"
+        DataContext="CharacterViewModel"
+        xmlns:views="clr-namespace:SimpleWPF.View">
+    <Grid>
+        <StackPanel>
+            <views:UserControlCharacter x:Name="UserControlCharacter" Loaded="UserControlCharacter_Loaded"></views:UserControlCharacter>
+            <views:UserControlCharacter x:Name="UserControlCharacter2" Loaded="UserControlCharacter2_Loaded"></views:UserControlCharacter>
+            <views:UserControlCharacters x:Name="UserControlCharactersList" Loaded="UserControlCharactersList_Loaded"></views:UserControlCharacters>
+        </StackPanel>
     </Grid>
 </Window>
+
+    

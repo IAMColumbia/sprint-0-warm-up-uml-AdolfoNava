@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sprint_0_Warm_Up;
+using Sprint_0_Warm_Up.Engines;
+
 namespace Sprint_0_Unit_Testing
 {
     [TestClass]
@@ -11,7 +13,7 @@ namespace Sprint_0_Unit_Testing
         Drone drone;
         public DroneTest()
         {
-            drone = new Drone();
+            drone = new Drone(new UAVEngine());
         }
         [TestMethod]
         public void DroneAbout()
@@ -33,20 +35,20 @@ namespace Sprint_0_Unit_Testing
             bool isFlyingBeginning;
             bool isFlyingEnd;
 
-            engineStarted = d.engine.isStarted;
+            engineStarted = d.Engine.IsStarted;
             engineEnd = true;
             isFlyingBeginning = d.IsFlying;
             isFlyingEnd = true;
 
             Assert.AreEqual(false, engineStarted);// test engine class
-            d.engine.Start();
-            Assert.AreEqual(true, d.engine.isStarted);
-            d.engine.Stop();
-            Assert.AreEqual(false, d.engine.isStarted);//reset
+            d.Engine.Start();
+            Assert.AreEqual(true, d.Engine.IsStarted);
+            d.Engine.Stop();
+            Assert.AreEqual(false, d.Engine.IsStarted);//reset
             d.TakeOff();
             Assert.IsFalse(d.IsFlying);
             d.StartEngine();
-            Assert.AreEqual(engineEnd, d.engine.isStarted);
+            Assert.AreEqual(engineEnd, d.Engine.IsStarted);
             d.TakeOff();
             Assert.AreEqual(isFlyingEnd, d.IsFlying);
 

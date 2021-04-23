@@ -4,16 +4,16 @@ using System.Text;
 
 namespace Sprint_0_Warm_Up
 {
-    public class ToyPlane : Airplane
+    public class ToyPlane : AerialVehicle
     {
         public bool isWoundUp { get; set; }
 
-        public ToyPlane()
+        public ToyPlane(IEngine engine)
         {
             this.isWoundUp = false;
             this.CurrentAltitude = 0;
             this.MaxAltitude = 50;
-            engine.isStarted = false;
+            this.Engine = engine;
         }
 
         public override string About()
@@ -29,12 +29,12 @@ namespace Sprint_0_Warm_Up
         public override void StartEngine()
         {
             if (isWoundUp == true)
-                engine.isStarted = true;
+                Engine.IsStarted = true;
         }
 
         public override string TakeOff()
         {
-            if (engine.isStarted)
+            if (Engine.IsStarted)
             {
                 IsFlying = true;
                 CurrentAltitude = MaxAltitude;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sprint_0_Warm_Up;
+using Sprint_0_Warm_Up.Engines;
 
 namespace Sprint_0_Unit_Testing
 {
@@ -13,7 +14,7 @@ namespace Sprint_0_Unit_Testing
         ToyPlane toyPlane;
         public ToyPlaneTest()
         {
-            toyPlane = new ToyPlane();
+            toyPlane = new ToyPlane(new RubberBandEngine());
         }
         [TestMethod]
         public void ToyPlaneAbout()
@@ -48,12 +49,12 @@ namespace Sprint_0_Unit_Testing
             endWoundUp = true;
             startIsFlying = tp.IsFlying;
             endIsFlying = true;
-            startEngineStatus = tp.engine.isStarted;
+            startEngineStatus = tp.Engine.IsStarted;
             endEngineStatus = true;
 
             Assert.AreEqual(startIsFlying, tp.IsFlying);
             Assert.AreEqual(startWoundUp, tp.isWoundUp);
-            Assert.AreEqual(startEngineStatus, tp.engine.isStarted);
+            Assert.AreEqual(startEngineStatus, tp.Engine.IsStarted);
             tp.WindUp();
             Assert.IsTrue(tp.isWoundUp);
             tp.UnWind();

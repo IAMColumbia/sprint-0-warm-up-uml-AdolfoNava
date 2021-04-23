@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sprint_0_Warm_Up;
+using Sprint_0_Warm_Up.Engines;
 
 namespace Sprint_0_Unit_Testing
 {
@@ -12,7 +13,7 @@ namespace Sprint_0_Unit_Testing
         Helicopter airplane;
         public HelicopterTest()
         {
-            airplane = new Helicopter();
+            airplane = new Helicopter(new ReciprocatingEngine());
         }
 
         [TestMethod]
@@ -24,20 +25,20 @@ namespace Sprint_0_Unit_Testing
             bool isFlyingBeginning;
             bool isFlyingEnd;
 
-            engineStarted = heli.engine.isStarted;
+            engineStarted = heli.Engine.IsStarted;
             engineEnd = true;
             isFlyingBeginning = heli.IsFlying;
             isFlyingEnd = true;
 
             Assert.AreEqual(false, engineStarted);// test engine class
-            heli.engine.Start();
-            Assert.AreEqual(true, heli.engine.isStarted);
-            heli.engine.Stop();
-            Assert.AreEqual(false, heli.engine.isStarted);//reset
+            heli.Engine.Start();
+            Assert.AreEqual(true, heli.Engine.IsStarted);
+            heli.Engine.Stop();
+            Assert.AreEqual(false, heli.Engine.IsStarted);//reset
             heli.TakeOff();
             Assert.IsFalse(heli.IsFlying);
             heli.StartEngine();
-            Assert.AreEqual(engineEnd, heli.engine.isStarted);
+            Assert.AreEqual(engineEnd, heli.Engine.IsStarted);
             heli.TakeOff();
             Assert.AreEqual(isFlyingEnd, heli.IsFlying);
 

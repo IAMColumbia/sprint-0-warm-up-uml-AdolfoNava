@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Sprint_0_Warm_Up.Engines;
+using System;
 using static System.Console;
+using Ninject;
+using Ninject.Modules;
+using Sprint_0_Warm_Up.NinjectModules;
 
 namespace Sprint_0_Warm_Up
 {
@@ -10,6 +14,11 @@ namespace Sprint_0_Warm_Up
         {
             //Tester t = new Tester();
             //t.Test();
+            IAerialVehicle ap;
+            IKernel kernal;
+            kernal = new StandardKernel(new AirplaneNinject());
+            ap = kernal.Get<IAerialVehicle>();
+            Console.WriteLine(ap.Engine.About()); 
         }
 
         class Tester

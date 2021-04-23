@@ -2,10 +2,10 @@
 
 namespace Sprint_0_Warm_Up
 {
-    public abstract class AerialVehicle
+    public abstract class AerialVehicle : IAerialVehicle, IAboutable
     {
         public int CurrentAltitude { get; set; }
-        public Engine engine { get; set; }
+        public IEngine Engine { get; set; }
         public bool IsFlying { get; set; }
         public int MaxAltitude { get; set; }
 
@@ -15,7 +15,7 @@ namespace Sprint_0_Warm_Up
             this.MaxAltitude = 0;
             this.CurrentAltitude = 0;
             this.IsFlying = false;
-            engine = new Engine();
+            Engine = new Engine();
         }
 
         public virtual string About()
@@ -25,7 +25,7 @@ namespace Sprint_0_Warm_Up
 
         public virtual string TakeOff()
         {
-            if (engine.isStarted)
+            if (Engine.IsStarted)
             {
                 CurrentAltitude = CurrentAltitude + 1000;
                 IsFlying = true;
@@ -42,7 +42,7 @@ namespace Sprint_0_Warm_Up
         }
         public virtual void StartEngine()
         {
-            engine.isStarted = true;
+            Engine.IsStarted = true;
             Console.WriteLine(getEngineStartedString());
 
         }
