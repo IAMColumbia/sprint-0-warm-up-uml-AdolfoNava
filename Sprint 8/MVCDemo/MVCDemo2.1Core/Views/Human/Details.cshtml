@@ -1,0 +1,42 @@
+﻿@model MVCDemo2._1Core.Models.IHuman
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>IHuman</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Strength)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Strength)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Magic)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Magic)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Health)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Health)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

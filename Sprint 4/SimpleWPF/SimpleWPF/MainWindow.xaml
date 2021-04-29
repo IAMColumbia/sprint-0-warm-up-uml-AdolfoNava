@@ -1,0 +1,21 @@
+﻿<Window x:Class="SimpleWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleWPF"
+        
+        mc:Ignorable="d"
+        Title="Simple wpf home" Height="1520" Width="1080"
+        DataContext="CharacterViewModel"
+        xmlns:views="clr-namespace:SimpleWPF.View">
+    <Grid>
+        <StackPanel>
+            <views:UserControlCharacter x:Name="UserControlCharacter" Loaded="UserControlCharacter_Loaded"></views:UserControlCharacter>
+            <views:UserControlCharacter x:Name="UserControlCharacter2" Loaded="UserControlCharacter2_Loaded"></views:UserControlCharacter>
+            <views:UserControlCharacters x:Name="UserControlCharactersList" Loaded="UserControlCharactersList_Loaded"></views:UserControlCharacters>
+        </StackPanel>
+    </Grid>
+</Window>
+
+    

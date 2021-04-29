@@ -1,0 +1,37 @@
+﻿@model MVCDemo2._1Core.Models.RepoViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>RepoViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalValue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalValue)
+        </dd>
+    </dl>
+    <div>
+        @foreach (var item in Model.repo.Coins)
+        {
+            <ul>
+                <li>
+                    @Html.DisplayFor(Model => item.Name)
+                </li>
+                <li>
+                    @Html.DisplayFor(Model => item.MonetaryValue)
+                </li>
+            </ul>
+        }
+    </div>
+</div>
+<div>
+    @Html.ActionLink("To Make Change", "MakeChange", new {})
+    <a asp-action="Index">Back to List</a>
+</div>

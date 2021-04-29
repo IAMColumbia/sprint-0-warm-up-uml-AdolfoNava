@@ -1,0 +1,44 @@
+﻿@model MVCDemo2._1Core.Models.IHuman
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>IHuman</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Strength)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Strength)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Magic)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Magic)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Health)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Health)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
