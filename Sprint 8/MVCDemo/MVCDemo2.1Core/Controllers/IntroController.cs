@@ -10,7 +10,7 @@ namespace MVCDemo2._1Core.Controllers
 {
     public IActionResult Index(string name)
     {
-            ViewData["Message"] = $"Hello {name} from MVC demo type in /Human for the extension of my objects in work";
+            ViewData["Message"] = $"Hello {name} from MVC demo type in /Human or /CurrencyRepo for the extensions to test.";
         return View();
     }
     //public string Hello(string name, int ?Age=0)

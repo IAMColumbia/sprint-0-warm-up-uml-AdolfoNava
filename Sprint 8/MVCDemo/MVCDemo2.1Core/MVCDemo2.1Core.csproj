@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Sprint 3\CurrencySprint2Stub\Currency\Currency.csproj" />
+    <ProjectReference Include="..\CurrencyCore\CurrencyCore.csproj" />
   </ItemGroup>
 
 </Project>

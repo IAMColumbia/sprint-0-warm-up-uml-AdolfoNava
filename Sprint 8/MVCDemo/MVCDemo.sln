@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCDemo2.1Core", "MVCDemo2.1Core\MVCDemo2.1Core.csproj", "{BDEC1C03-87CA-4C6B-8C67-4054223E6636}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Currency", "..\..\Sprint 3\CurrencySprint2Stub\Currency\Currency.csproj", "{86C18263-1CCF-4642-ADFC-992B46B8F564}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyCore", "CurrencyCore\CurrencyCore.csproj", "{2992A927-4D3B-4F6D-B8FA-20DDCEC79CA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{BDEC1C03-87CA-4C6B-8C67-4054223E6636}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDEC1C03-87CA-4C6B-8C67-4054223E6636}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDEC1C03-87CA-4C6B-8C67-4054223E6636}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86C18263-1CCF-4642-ADFC-992B46B8F564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86C18263-1CCF-4642-ADFC-992B46B8F564}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86C18263-1CCF-4642-ADFC-992B46B8F564}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86C18263-1CCF-4642-ADFC-992B46B8F564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2992A927-4D3B-4F6D-B8FA-20DDCEC79CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2992A927-4D3B-4F6D-B8FA-20DDCEC79CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2992A927-4D3B-4F6D-B8FA-20DDCEC79CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2992A927-4D3B-4F6D-B8FA-20DDCEC79CA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
